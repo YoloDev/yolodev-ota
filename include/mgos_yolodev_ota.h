@@ -8,6 +8,7 @@
 #include "common/mg_str.h"
 #include "frozen.h"
 #include "mgos_event.h"
+#include "mgos_updater_common.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -24,7 +25,7 @@ enum yolodev_ota_event {
 struct yolodev_ota_request {
   char *uri;
   uint32_t crc32;
-  void *updater_context;
+  struct update_context *updater_context;
 };
 
 // Init
