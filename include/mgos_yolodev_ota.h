@@ -23,10 +23,14 @@ enum yolodev_ota_event {
 
 /* ev_data for YOLODEV_OTA_REQUEST event. */
 struct yolodev_ota_request {
-  char *uri;
+  const char *uri;
   uint32_t crc32;
+  bool handled;
   struct update_context *updater_context;
 };
+
+// API
+bool yolodev_request_ota(const char *uri, uint32_t crc32);
 
 // Init
 bool mgos_yolodev_ota_init(void);
