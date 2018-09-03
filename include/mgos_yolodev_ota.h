@@ -22,7 +22,7 @@ enum yolodev_ota_event {
 
 /* ev_data for YOLODEV_OTA_REQUEST event. */
 struct yolodev_ota_request {
-  char *location;
+  char *uri;
   uint32_t crc32;
   void *updater_context;
 };
